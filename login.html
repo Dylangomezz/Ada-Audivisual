@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ada Audiovisual</title>
     <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -25,8 +26,9 @@
                 <div class="input-group">
                     <input type="text" placeholder="Login" required>
                 </div>
-                <div class="input-group">
+                <div class="input-group password-group">
                     <input type="password" placeholder="Senha" required>
+                    <i class="fa-solid fa-eye" id="toggle-passworld"></i>
                 </div>
                 <button type="submit" class="btn-submit">Entrar</button>
             </form>
@@ -39,7 +41,8 @@
     </main>
 
     <!-- Rodapé -->
-     <footer class="footer"></footer>
+    <footer class="footer"></footer>
+    <script src="js login/showPassword.js"></script>
 </body>
 
 </html>
