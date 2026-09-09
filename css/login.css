@@ -120,7 +120,7 @@ body {
     overflow: hidden;
 }
 
-/* Mascote no fundo do cartão */
+/* Mascote no fundo do cartão (Desktop) */
 .login-card::before {
     content: "";
     position: absolute;
@@ -130,7 +130,8 @@ body {
     height: 100%;
     background-image: url('../assets/Logo-Ada(fundo login).png');
     background-repeat: no-repeat;
-    background-position: center -2rem;
+    /* Alinhado para não sobrepor o texto nem cortar a cabeça no desktop */
+    background-position: center -2.2rem;
     background-size: 100% auto;
     opacity: 0.35;
     z-index: -1;
@@ -164,7 +165,7 @@ body {
 
 .input-group input {
     width: 100%;
-    font-size: 1rem; /* 16px exatos: impede o auto-zoom do teclado no iOS */
+    font-size: 1rem; /* 16px exatos: bloqueia auto-zoom do iOS ao focar */
     padding: 0.65em 0.8em;
     background-color: #fff9f0;
     border: none;
@@ -198,7 +199,7 @@ body {
 }
 
 .password-group input {
-    /* Paddings simétricos para manter o texto centralizado */
+    /* Paddings simétricos para manter o texto perfeitamente centralizado */
     padding-left: 2.8rem !important;
     padding-right: 2.8rem !important;
 }
@@ -273,7 +274,7 @@ body {
         height: 2.5rem;
     }
 
-    /* Delimita o miolo exatamente entre o cabeçalho e o rodapé reduzidos */
+    /* Delimita o miolo exatamente entre o cabeçalho e o rodapé no telemóvel */
     .login-wrapper {
         top: 3.5rem;
         bottom: 2.5rem;
@@ -288,10 +289,10 @@ body {
         box-sizing: border-box;
     }
 
-    /* Mascote preenche todo o cartão sem deixar faixas vazias */
+    /* Mascote ajustado para o vão no Mobile */
     .login-card::before {
-        background-size: auto 78%;
-        background-position: center -2%;
+        background-size: 100% auto;
+        background-position: center -4.5rem;
         opacity: 0.35;
     }
 
@@ -314,7 +315,7 @@ body {
     .login-links {
         gap: 0.35rem;
     }
-
+    
     .login-links a {
         font-size: 0.72rem;
     }
