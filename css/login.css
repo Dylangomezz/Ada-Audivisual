@@ -126,7 +126,7 @@ body {
 
 .input-group input {
     width: 100%;
-    font-size: 0.95rem;
+    font-size: 1rem;
     padding: 0.65em 0.8em;
     background-color: #fff9f0;
     border: none;
@@ -250,8 +250,9 @@ body {
     }
 
     .login-card::before {
-        background-size: contain;
-        background-position: center 1.5rem;
+        background-size: cover;
+        background-position: center top;
+        opacity: 0.35;
     }
 
     .welcome-title {
