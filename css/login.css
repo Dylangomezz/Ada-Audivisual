@@ -9,10 +9,13 @@
 body {
     background-color: #FEF5EA;
     height: 100vh;
+    min-height: 100dvh;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     font-size: 1rem;
+    margin: 0;
+    overflow-x: hidden;
 }
 
 /* Cabeçalho */
@@ -191,12 +194,17 @@ body {
 .footer {
     background-color: #2a2a2a;
     width: 100%;
-    height: 3.43rem;
+    height: 3rem;
     flex-shrink: 0;
 }
 
 /* Responsividade */
 @media (max-width: 37.5em) {
+    
+    body {
+        overflow-y: auto;
+    }
+    
     .navbar {
         padding: 0.75rem 1rem;
         justify-content: flex-start;
@@ -207,15 +215,22 @@ body {
     }
 
     .login-wrapper {
-        padding: 1.87rem 1rem;
+        padding: 1rem;
     }
 
     .login-card {
         padding: 1.5rem 1.12rem;
     }
 
+    .login-card::before {
+        
+        background-size: contain; 
+        background-position: center 2.5rem; 
+        background-repeat: no-repeat;
+    }
+
     .welcome-title {
-        margin-bottom: 2.5rem;
+        margin-bottom: 1.5rem;
         font-size: 0.9rem;
     }
 
@@ -228,6 +243,6 @@ body {
     }
 
     .footer {
-        height: 2.8rem;
+        height: 2.5rem;
     }
 }
