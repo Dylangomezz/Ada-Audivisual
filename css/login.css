@@ -4,29 +4,37 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    -webkit-tap-highlight-color: transparent;
 }
 
 html, body {
+    width: 100%;
     height: 100%;
-    overscroll-behavior: none; /* Desativa efeito elástico de bounce no mobile */
+    height: 100dvh;
+    overflow: hidden;
+    background-color: #FEF5EA;
+    overscroll-behavior-y: none;
 }
 
 body {
-    background-color: #FEF5EA;
-    height: 100dvh; /* Garante altura exata descontando barras do navegador */
     display: flex;
     flex-direction: column;
     font-size: 1rem;
-    overflow: hidden; /* Trava a página para o header e footer não sumirem */
+    position: relative;
 }
 
-/* Cabeçalho */
+/* Cabeçalho travado no topo */
 .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6.5rem;
     background-color: #2a2a2a;
     padding: 1rem 5rem;
     display: flex;
     align-items: center;
-    flex-shrink: 0;
+    z-index: 100;
 }
 
 .logo-img {
@@ -34,14 +42,31 @@ body {
     display: block;
 }
 
-/* Seção central */
+/* Rodapé travado na base */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3rem;
+    background-color: #2a2a2a;
+    z-index: 100;
+}
+
+/* Seção central: ocupa apenas o espaço entre header e footer */
 .login-wrapper {
-    flex: 1;
-    min-height: 0;
+    position: fixed;
+    top: 6.5rem;   /* Altura do header desktop */
+    bottom: 3rem;  /* Altura do footer desktop */
+    left: 0;
+    right: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 1rem;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
 }
 
 .login-card {
@@ -57,7 +82,7 @@ body {
     overflow: hidden;
 }
 
-/* Mascote de fundo */
+/* Mascote de fundo no card */
 .login-card::before {
     content: "";
     position: absolute;
@@ -74,7 +99,7 @@ body {
     pointer-events: none;
 }
 
-/* Título de boas-vindas */
+/* Título */
 .welcome-title {
     background-color: #fff9f0;
     color: #111111;
@@ -128,7 +153,7 @@ body {
     opacity: 0.3;
 }
 
-/* Grupo de senha e ícone */
+/* Campo de senha e ícone do olho */
 .password-group {
     position: relative;
     width: 100%;
@@ -193,22 +218,10 @@ body {
     text-decoration: underline;
 }
 
-/* Rodapé */
-.footer {
-    background-color: #2a2a2a;
-    width: 100%;
-    height: 3rem;
-    flex-shrink: 0;
-    margin-top: auto;
-}
-
-/* Responsividade Mobile */
+/* Responsividade Mobile (iOS e Android) */
 @media (max-width: 37.5em) {
-    body {
-        overflow: hidden;
-    }
-
     .navbar {
+        height: 3.5rem;
         padding: 0.5rem 1rem;
         justify-content: flex-start;
     }
@@ -217,18 +230,22 @@ body {
         height: 2.5rem;
     }
 
+    .footer {
+        height: 2.5rem;
+    }
+
+    /* Delimita o meio entre os tamanhos mobile das barras */
     .login-wrapper {
+        top: 3.5rem;
+        bottom: 2.5rem;
         padding: 0.5rem 1rem;
-        margin: 0;
-        flex: 1;
-        min-height: 0;
     }
 
     .login-card {
         width: 100%;
         max-width: 22rem;
         padding: 1.25rem 1.25rem;
-        margin: 0 auto;
+        margin: auto;
         box-sizing: border-box;
     }
 
@@ -256,12 +273,8 @@ body {
     .login-links {
         gap: 0.35rem;
     }
-
+    
     .login-links a {
         font-size: 0.72rem;
-    }
-
-    .footer {
-        height: 2.5rem;
     }
 }
