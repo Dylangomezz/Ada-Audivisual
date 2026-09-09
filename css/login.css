@@ -130,8 +130,8 @@ body {
     height: 100%;
     background-image: url('../assets/Logo-Ada(fundo login).png');
     background-repeat: no-repeat;
-    background-position: center top;
-    background-size: cover;
+    background-position: center -2rem;
+    background-size: 100% auto;
     opacity: 0.35;
     z-index: -1;
     pointer-events: none;
@@ -290,8 +290,8 @@ body {
 
     /* Mascote preenche todo o cartão sem deixar faixas vazias */
     .login-card::before {
-        background-size: cover;
-        background-position: center top;
+        background-size: 92% auto;
+        background-position: center -3rem;
         opacity: 0.35;
     }
 
