@@ -290,8 +290,8 @@ body {
 
     /* Mascote preenche todo o cartão sem deixar faixas vazias */
     .login-card::before {
-        background-size: 92% auto;
-        background-position: center -3rem;
+        background-size: auto 78%;
+        background-position: center -2%;
         opacity: 0.35;
     }
 
