@@ -292,7 +292,7 @@ body {
     /* Mascote ajustado para o vão no Mobile */
     .login-card::before {
         background-size: 100% auto;
-        background-position: center 0;
+        background-position: center -2rem;
         opacity: 0.35;
     }
 
